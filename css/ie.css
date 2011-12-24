@@ -1,0 +1,76 @@
+/*******************************************************************************
+
+	Title: Iam localized
+	Date: November 2011
+	Author: Suitmedia (http://www.suitmedia.com)
+
+********************************************************************************
+
+/* Clearfix */
+.clearfix,
+.container,
+nav[role="navigation"] ul,
+.box,
+.audio-player .meta,
+.audio-player .volume,
+.audio-player .section,
+.audio-player .section-alt,
+.most-tabs-nav,
+.most-tabs-content li,
+.artist-follow header,
+.artist-follow ul,
+.noteworthy .box > ul,
+.option,
+.chart-section li,
+.chart-section .details header,
+.fresh-archive li,
+.fresh-details,
+.gig-section li,
+.gig-section .meta,
+.gig-list,
+.filter,
+.artist-list ul,
+.global-form li,
+.mylocalized-menu nav,
+.my-playlist-list,
+.my-playlist-list li,
+.playlist-info header,
+.my-album-list ul,
+.popular-album ul,
+.my-music-list header,
+.my-music-list .track li,
+footer[role="contentinfo"] { zoom: 1; }
+
+
+/* Content
+------------------------------------------------------------------------------*/
+
+.pagination .prev,
+.pagination .next {
+	margin-top: 1px;
+}
+
+.artist-follow .more {
+	background: url(../images/ico-artist-follow-more.png) no-repeat 100% 8px;
+}
+
+.register-section .box {
+	background: transparent;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000)";
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+	zoom: 1;	
+}
+
+.my-artist-list header {
+	background: transparent;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000)";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+    zoom: 1;
+}
+
+.my-playlist-list ul {
+	background: transparent;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000)";
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+	zoom: 1;	
+}

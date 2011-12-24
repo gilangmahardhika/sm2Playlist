@@ -1,0 +1,59 @@
+ul#playlist {
+	width:200px;
+}
+
+ul#playlist li{
+	margin:0 0 3px 0;
+	list-style:none;
+	padding:3px;
+	background-color:#B7AAAA;
+}
+
+ul#playlist li.active{
+	background-color:#cccccc;
+}
+#slider-vertical{
+	background: none repeat scroll 0 0 #262929;
+    float:;
+    height: 4px;
+    margin: 13px 7px 0 0;
+    width: 79px;
+}
+div.ui-slider-range {
+	background-color:#ccc;
+	display:block;
+	position:relative;
+	height: 4px;
+}
+
+.ui-slider-handle {
+    width:5px;
+	height:5px;
+	display:block;
+	position:relative;
+	background-color:#cccccc;
+    border: 1px solid #D3D3D3;
+	margin-top:-5px;
+}
+
+.bar{
+	background: none repeat scroll 0 0 #262929;
+	height: 4px;
+	width: 69px;
+}
+.bar .progress{
+	height:4px;
+	display:block;
+	background-color:#ccc;
+	width:0;
+}
+
+#graphPixelBox {
+	width:20px;
+	height:100px;
+}
+#graphPixel {
+	display:block;
+	width:20px;
+}
+

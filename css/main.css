@@ -1,0 +1,2121 @@
+/*******************************************************************************
+
+	Title: Iam localized
+	Date: November 2011
+	Author: Suitmedia (http://www.suitmedia.com)
+
+********************************************************************************
+
+	1 Reset
+	2 Clearfix
+	3 Font face
+	4 Base styles
+	5 Common styles
+	6 Header
+	7 Content
+		7.1  Home
+		7.2	 About us
+		7.3	 Music chart
+		7.4	 Fresh
+		7.5  Gig
+		7.6	 Artist
+		7.7  Upload
+		7.8  Register
+		7.9  Mylocalized
+		7.10 Signup as
+	8 Sidebar
+	9 Footer
+	10.Print
+
+*******************************************************************************/
+
+
+/* 1 Reset
+------------------------------------------------------------------------------*/
+
+html, body, body div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+	content: none;
+}
+
+ins {
+	background-color: #ff9;
+	color: #000;
+	text-decoration: none;
+}
+
+mark {
+	background-color: #ff9;
+	color: #000;
+	font-style: italic;
+	font-weight: bold;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+
+/* 2 Clearfix
+------------------------------------------------------------------------------*/
+
+.clearfix:after,
+.container:after,
+.global-search fieldset div:after,
+.global-search fieldset div div:after,
+nav[role="navigation"] ul:after,
+.box:after,
+.audio-player .meta:after,
+.audio-player .volume:after,
+.audio-player .section:after,
+.audio-player .section-alt:after,
+.most-tabs-nav:after,
+.most-tabs-content li:after,
+.artist-follow header:after,
+.artist-follow ul:after,
+.noteworthy .box > ul:after,
+.option:after,
+.chart-section li:after,
+.chart-section .details header:after,
+.fresh-archive li:after,
+.fresh-details:after,
+.gig-section li:after,
+.gig-section .meta:after,
+.gig-list:after,
+.filter:after,
+.artist-list ul:after,
+.global-form li:after,
+.mylocalized-menu nav:after,
+.my-playlist-list:after,
+.my-playlist-list li:after,
+.playlist-info header:after,
+.my-album-list ul:after,
+.popular-album ul:after,
+.my-music-list header:after,
+.my-music-list .track li:after,
+footer[role="contentinfo"]:after { 
+	content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden; 
+}
+
+
+/* 3 Font face
+------------------------------------------------------------------------------*/
+
+@font-face {
+	font-family: 'Conv_GOTHIC';
+	src: url('../fonts/GOTHIC.eot');
+	src: local('☺'), url('../fonts/GOTHIC.woff') format('woff'), url('../fonts/GOTHIC.ttf') format('truetype'), url('../fonts/GOTHIC.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'ChampagneLimousinesRegular';
+    src: url('../fonts/champagne__limousines-webfont.eot');
+    src: url('../fonts/champagne__limousines-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/champagne__limousines-webfont.woff') format('woff'),
+         url('../fonts/champagne__limousines-webfont.ttf') format('truetype'),
+         url('../fonts/champagne__limousines-webfont.svg#ChampagneLimousinesRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EuromodeBold';
+    src: url('../fonts/eurob-webfont.eot');
+    src: url('../fonts/eurob-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/eurob-webfont.woff') format('woff'),
+         url('../fonts/eurob-webfont.ttf') format('truetype'),
+         url('../fonts/eurob-webfont.svg#EuromodeBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* 4 Base styles
+------------------------------------------------------------------------------*/
+
+body { 
+	background: url(../images/bg-page.png) no-repeat center 0 #000;
+	color: #fff;
+	font: 75%/1.3333 Arial, Helvetica, sans-serif; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+a:hover, a:active {
+	outline: none;
+}
+
+a, a:active, a:visited {
+	color: #ff9900;
+	text-decoration: none;
+}
+
+ol, ul, li {
+	list-style: none;
+}
+
+input, select, textarea {
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+input[type="checkbox"] {
+	margin-left: 0;
+}
+
+
+/* 5 Common styles
+------------------------------------------------------------------------------*/
+
+.container {
+	margin: 0 auto;
+	width: 946px;
+}
+
+.btn {
+	display: block;
+	text-indent: -999em;
+}
+
+.form-btn {
+	border: none;
+	cursor: pointer;
+	display: block;
+	line-height: 0;
+	text-indent: -999em;
+}
+
+/* Custom select */
+.custom-select { 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border-radius: 5px; 
+	background: #000; 
+	border: 1px solid #202020;
+	position: relative; 
+	width: 148px; 
+	z-index: 1;
+}
+
+.custom-select a.current-selected { 
+	background: url(../images/btn-select-arrow.png) 98% center no-repeat; 
+	color: #fff; 
+	cursor: pointer; 
+	display: block; 
+	font-size: 11px; 	
+	height: 18px; 
+	line-height: 18px; 	
+	outline: none;
+	padding: 0 25px 0 10px; 
+	text-decoration: none; 
+}
+
+.custom-select .custom-select-wrapper { 
+	left: -999em; 
+	position: absolute; 
+	z-index: 100; 
+}
+
+.custom-select .bottom { 
+	font-size: 0; 	
+	height: 6px; 
+	line-height: 6px; 
+	width: 148px; 
+}
+
+.custom-select.open {
+	z-index: 102;	
+}
+
+.custom-select.open .custom-select-wrapper { 
+	background: #000; 
+	border: 1px solid #202020; 
+	left: auto; 
+	margin-left: -1px; 
+	top: 21px; 
+	z-index: 100;
+} 
+
+.custom-select ul { 
+	list-style: none; 
+	padding: 0; 
+	margin: 0; 
+}
+
+.custom-select ul li { 
+	border-bottom: 1px solid #202020; 
+	float: none; 
+	line-height: 1.09; 
+	list-style: outside none;
+	margin: 0; 
+	padding: 0; 
+}
+
+.custom-select ul li a { 
+	display: block; 
+	color: #fff; 
+	font-size: 11px;
+	padding: 3px 10px; 
+	text-decoration: none; 
+}
+
+.custom-select ul li a:hover, 
+.custom-select ul li a.current { 
+	background: #CD960A; 
+	color: #fff;
+	text-decoration: none;
+}
+
+a.checkbox {
+	display: inline-block;
+	float: left;	
+	margin-right: 5px;
+	outline: none; 	
+}
+
+a.checkbox { 
+	background: url(../images/bg-checkbox.png) no-repeat; 	
+	width: 12px; 
+	height: 13px; 
+}
+
+a.checkbox-checked { 
+	background: url(../images/bg-checkbox-check.png) no-repeat; 	
+}
+
+.custom-check label {
+	cursor: pointer;
+}
+
+/* notification */
+#notification {
+	color: #fff;
+	display: none;
+	font-size: 18px;
+	left: 0px;
+	padding: 5px 0;
+	position: fixed;
+	text-align: center;
+	top: 0px;
+	width: 100%;
+	z-index: 100;
+}
+
+#notification span.dismiss {
+    border: 2px solid #fff;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    margin-right: 10px;    
+    padding: 0 5px;
+}
+
+#notification a {
+    color: #fff;
+    font-weight: bold;
+}
+
+.error {
+	background: #de4343;
+}
+
+.success {
+	background: #61b832;
+}
+
+
+/* 6 Header
+------------------------------------------------------------------------------*/
+
+header[role="banner"] {
+	background: url(../images/bg-header.png) repeat-x;
+	height: 48px;
+	position: relative;
+}
+
+header[role="banner"] .logo {
+	display: block;
+	float: left;
+	width: 191px;
+}
+
+/* top menu */
+.top-menu {
+	float: right;
+	padding-top: 8px;
+	width: 471px;
+}
+
+.top-menu ul {
+	float: left;
+	margin-right: 10px;
+	padding-top: 1px;
+}
+
+.top-menu li {
+	float: left;
+	margin-left: 3px;
+}
+
+.top-menu li:first-child {
+	margin-left: 0;
+}
+
+.top-menu li a {
+	background: url(../images/bg-top-menu-btn.png) repeat-x;
+	color: #fff;
+	display: block;
+	height: 13px;
+	padding: 5px 10px;
+	position: relative;
+}
+
+.top-menu .login {
+	padding-right: 30px;
+}
+
+.top-menu .login span {
+	background: url(../images/ico-fb-top-menu.png) no-repeat;
+	display: block;
+	height: 14px;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	width: 14px;	
+}
+
+/* global search */
+.global-search {
+	float: right;
+}
+
+.global-search fieldset > div {
+	background: url(../images/bg-global-search.png) repeat-x;
+	height: 26px;
+	width: 261px;
+}
+
+.global-search fieldset div div {
+	background: url(../images/border-global-search.gif) no-repeat 100% 1px;	
+	float: left;
+	margin-top: 3px;
+	padding: 0 14px;
+	width: 195px;
+}
+
+.global-search div input[type="text"] {
+	background: none;
+	border: none;
+	color: #a5a5a5;
+	display: block;
+	font-size: 12px;
+	height: 21px;
+	line-height: 21px;
+	outline: none;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+	width: 195px;
+}
+
+.global-search .form-btn {
+	background: url(../images/btn-global-search.png) no-repeat;
+	height: 17px;
+	float: right;
+	margin: 4px 9px 0 0;
+	width: 17px;
+}
+
+/* navigation */
+nav[role="navigation"] {
+	padding-top: 21px;
+}
+
+nav[role="navigation"] .container {
+	padding-left: 217px;
+	width: 729px;
+}
+
+nav[role="navigation"] li {
+	float: left;
+	margin-left: 57px;
+}
+
+nav[role="navigation"] li:first-child {
+	margin-left: 0;
+}
+
+nav[role="navigation"] li a {
+	color: #fff;
+	font-family: 'Conv_GOTHIC';
+	font-size: 14px;
+	text-shadow: 2px 2px 0px #000;
+	text-transform: uppercase;
+}
+
+nav[role="navigation"] li a:hover,
+nav[role="navigation"] .active a {
+	color: #cd960a;
+}
+
+
+/* 7 Content
+------------------------------------------------------------------------------*/
+
+#content {
+	font-size: 12px;
+	padding-top: 26px;
+}
+
+.primary-right {
+	float: left;
+	width: 730px;
+}
+
+.section-left {
+	float: left;
+	width: 450px;	
+}
+
+.section-left h2 {
+	color: #fff;
+	font-family: 'Conv_GOTHIC';
+	font-size: 14px;
+	padding-bottom: 10px;
+	text-transform: uppercase;	
+}
+
+.section-right {
+	float: right;
+	width: 262px;
+}
+
+.section-right h2 {
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	text-transform: uppercase;
+}
+
+.section-right section {
+	margin-bottom: 20px;
+}
+
+/* most section */
+.most-tabs-nav {
+	border-top: 1px solid #373737;
+	border-left: 1px solid #373737;
+}
+
+.most-tabs-nav li {
+	border-left: 1px solid #000;
+	float: left;
+}
+
+.most-tabs-nav a {
+	background: #0f0f0f;
+	box-shadow: 0 0 4px #000;
+	color: #fff;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 129px;
+}
+
+.most-tabs-content {
+	-moz-box-shadow: 0 0 4px #000;
+	-webkit-box-shadow: 0 0 4px #000;
+	box-shadow: 0 0 4px #000;
+}
+
+.most-tabs-content li {
+	background: url(../images/bg-most-list.png) repeat-x;
+	height: 35px;
+	padding: 10px;
+}
+
+.most-tabs-content .odd {
+	background: url(../images/bg-most-list-odd.png) repeat-x;	
+}
+
+.most-tabs-content .option {
+	float: left;
+	width: 24px;
+}
+
+.most-tabs-content .option .btn {
+	height: 15px;
+	width: 15px;
+}
+
+.option .btn {
+	height: 15px;
+	margin-bottom: 5px;
+	width: 15px;
+}
+
+.option .play {
+	background: url(../images/ico-most-play.png) no-repeat;
+}
+
+.option .add {
+	background: url(../images/ico-most-add.png) no-repeat;
+}
+
+.most-tabs-content .details {
+	float: left;
+	width: 218px;
+}
+
+.most-tabs-content .details a,
+.most-tabs-content .details p {
+	color: #fff;
+	font-size: 11px;
+	padding-bottom: 5px;
+}
+
+.most-tabs-content .details .title {
+	font-weight: bold;
+}
+
+.most-tabs-content .details .artist {
+	color: #999;
+}
+
+/* artist info */
+.artist-info .box {
+	background: url(../images/bg-artist-info-box.png);
+	border-top: 1px solid rgba(255,255,255,0.2);
+	border-left: 1px solid rgba(255,255,255,0.2);
+	padding: 17px 15px 20px;
+}
+
+.artist-info h3 {
+	color: #fff;
+	font-size: 14px;
+	padding-bottom: 20px;
+}
+
+.artist-info h4 {
+	color: #fff;
+	font-weight: normal;
+}
+
+.artist-info p {
+	color: #fff;
+	padding-bottom: 20px;
+}
+
+.artist-info .website {
+	color: #cd960a;
+	display: block;
+	padding-bottom: 10px;
+	text-decoration: underline;
+}
+
+.artist-info .facebook-like {
+	background: url(../images/btn-facebook-like.png) no-repeat;
+	height: 21px;
+	margin-bottom: 10px;
+	width: 158px;
+}
+
+.artist-info .twitter-follow {
+	background: url(../images/btn-twitter-follow.png) no-repeat;
+	height: 21px;
+	width: 65px;
+}
+
+/* artist follow */
+.artist-follow h2 {
+	float: left;
+}
+
+.artist-follow .more {
+	background: url(../images/ico-artist-follow-more.png) no-repeat 100% 50%;
+	color: #cd960a;
+	display: block;
+	float: right;
+	padding: 3px 7px 0 0;
+}
+
+.artist-follow li {
+	float: left;
+	margin-left: 6px;
+}
+
+.artist-follow li:first-child {
+	margin-left: 0;
+}
+
+/* banner */
+.banner {
+	margin-bottom: 20px;
+}
+
+.banner img {
+	display: b;
+}
+
+/* global-form */
+.global-form input[type="text"],
+.global-form input[type="password"] {
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border-radius: 5px; 
+	background: #fff; 
+	border: 1px solid #202020;
+	font-size: 12px; 	
+	height: 20px; 
+	line-height: 20px;
+	padding: 0 5px;
+	vertical-align: middle;
+	width: 254px;
+}
+
+.global-form textarea {
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border-radius: 5px; 
+	background: #fff; 
+	border: none;
+	height: 100px;
+	resize: none;
+	padding: 5px;
+	width: 272px;	
+}
+
+.global-form .req {
+	color: #e4a400;
+}
+
+
+/* 7.1 Home
+------------------------------------------------------------------------------*/
+
+.video-player {
+	border: 1px solid rgba(255,255,255,0.2);
+	margin-bottom: 10px;
+}
+
+.video-player img {
+	display: block;
+}
+
+.lifeshare {
+	margin-bottom: 20px;
+}
+
+.noteworthy .box {
+	background: #000;
+	padding: 20px 15px 0;
+}
+
+.noteworthy .box > ul {
+	margin-bottom: 20px;
+}
+
+.noteworthy .box > ul > li {
+	float: left;
+	margin-left: 40px;
+	width: 190px;
+}
+
+.noteworthy .box > ul > li:first-child {
+	margin-left: 0;
+}
+
+.noteworthy .image {
+	float: left;
+	margin-right: 10px;
+	position: relative;
+	width: 90px;
+}
+
+.noteworthy .image a:hover span {
+	background: url(../images/bg-noteworthy-hover.png) no-repeat;
+	display: block;
+	height: 90px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 90px;
+	z-index: 10;
+}
+
+.noteworthy .image img {
+	z-index: 1;
+}
+
+.noteworthy .details {
+	float: left;
+	width: 90px;
+}
+
+.noteworthy .details .option {
+	margin-bottom: 5px;
+}
+
+.noteworthy .details .option li {
+	float: left;
+	margin-right: 10px;
+}
+
+.noteworthy .details h3 a {
+	color: #fff;	
+}
+
+.noteworthy .details p {
+	color: #999;
+	font-size: 11px;
+}
+
+.twitter-tl h2 {
+	color: #ffb900;
+	font-family: 'Conv_GOTHIC';
+	font-size: 36px;
+	font-weight: normal;
+	text-transform: none;
+}
+
+.twitter-tl p {
+	color: #c2c2c2;
+	padding-bottom: 10px;
+}
+
+.twitter-tl a {
+	color: #2dcbf6;
+}
+
+.twitter-tl .follow {
+	background: url(../images/ico-artist-follow-more.png) no-repeat 100% 50%;
+	color: #ffb900;
+	padding-right: 10px;
+}
+
+
+/* 7.2 About us
+------------------------------------------------------------------------------*/
+
+.about-section h2 {
+	color: #caa504;
+	font-size: 18px;
+	font-weight: normal;
+	text-transform: none;
+}
+
+.about-section .section-left {
+	width: 400px;
+}
+
+.about-section .section-right {
+	width: 300px;
+}
+
+.about-section p {
+	font-size: 14px;
+	padding-bottom: 20px;
+}
+
+
+/* 7.3 Music chart
+------------------------------------------------------------------------------*/
+
+.chart-section .section-left,
+.chart-section .section-right {
+	width: 365px;
+}
+
+.chart-section .section-right {
+	float: left;
+}
+
+.chart-section h2 {
+	font-size: 18px;
+	padding-bottom: 20px;
+}
+
+.chart-section div ul > li {
+	padding-bottom: 37px;
+	width: 300px;
+}
+
+.chart-section .image {
+	float: left;
+	margin-right: 12px;
+	width: 76px;
+}
+
+.chart-section .details {
+	float: left;
+	width: 212px;
+}
+
+.chart-section .details header {
+	padding-bottom: 5px;
+}
+
+.chart-section .details header .option {
+	float: left;
+	margin-right: 8px;
+}
+
+.chart-section .details header .option li {
+	padding-bottom: 0;
+	width: auto;
+}
+
+.chart-section .details header p {
+	float: left;
+}
+
+.chart-section .details header span {
+	display: block;
+	padding-bottom: 5px;
+}
+
+.chart-section .details header .title {
+	color: #ffd58d;
+}
+
+.chart-section .details header .artist {
+	color: #bfbfbf;
+}
+
+.chart-section .details .listeners {
+	background: #5f0006;
+	margin-bottom: 2px;
+	padding: 2px 0 2px 10px;
+	width: 152px;
+}
+
+.chart-section .details .shared {
+	background: #210002;
+	padding: 2px 0 2px 10px;
+	width: 202pxs;
+}
+
+
+/* 7.4 Fresh
+------------------------------------------------------------------------------*/
+
+.fresh-section h2,
+.fresh-section h2 a {
+	color: #caa504;
+	font-size: 18px;
+	font-weight: normal;
+	padding-bottom: 20px;
+}
+
+.fresh-archive li {
+	border-bottom: 1px dashed #fff;
+	padding: 20px 0;
+}
+
+.fresh-archive li:first-child {
+	padding-top: 0;
+}
+
+.fresh-archive h2 {
+	font-size: 14px;
+	padding-bottom: 0;
+}
+
+.fresh-archive .date {
+	padding-bottom: 5px;
+}
+
+.fresh-archive .image {
+	border: 2px solid #fff;
+	float: left;
+	margin-right: 10px;
+	width: 147px;
+}
+
+.fresh-archive .image img {
+	display: block;
+}
+
+.fresh-archive .details {
+	float: left;
+	width: 565px;
+}
+
+.fresh-archive .details p {
+	padding-bottom: 10px;
+}
+
+.fresh-archive .more {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background: #75a501;
+	color: #fff;
+	display: block;
+	font-size: 11px;
+	margin-top: 10px;
+	padding: 3px 0;
+	text-align: center;
+	width: 49px;
+}
+
+.fresh-details {
+	margin-bottom: 20px;
+}
+
+.fresh-details .image {
+	border: 2px solid #fff;
+	float: left;
+	margin-right: 15px;
+	width: 463px;
+}
+
+.fresh-details .image img {
+	display: block;
+}
+
+.fresh-details .related-article {
+	border-bottom: 1px solid #404040;
+	float: left;
+}
+
+.fresh-details .related-article h3 {
+	border-bottom: 1px solid #404040;
+	font-size: 18px;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+
+.fresh-details .related-article li {
+	padding-bottom: 10px;
+}
+
+.fresh-details .related-article a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.fresh-section .details p {
+	padding-bottom: 10px;
+}
+
+
+/* 7.5 Gig
+------------------------------------------------------------------------------*/
+
+.gig-section li {
+	padding-bottom: 20px;
+}
+
+.gig-section .meta {
+	margin-bottom: 10px;
+}
+
+.gig-section .meta .date,
+.gig-section .meta .month,
+.gig-section .meta .day {
+	color: #afafaf;
+	display: block;
+	float: left;	
+	font-size: 11px;
+	height: 13px;
+	margin-left: 2px;
+	padding: 7px 0;
+	text-align: center;
+	text-shadow: 0 -1px 0 #000;
+	text-transform: uppercase;
+}
+
+.gig-section .meta .date {
+	background: url(../images/bg-gig-date.png) repeat-x;
+	height: 17px;
+	margin-left: 0;
+	width: 28px;
+}
+
+.gig-section .meta .month {
+	background: url(../images/bg-gig-month.png) repeat-x;
+	width: 38px;
+}
+
+.gig-section .meta .day {
+	background: url(../images/bg-gig-day.png) repeat-x;
+	width: 78px;
+}
+
+.gig-section .meta .time {
+	display: block;
+	float: left;
+	font-size: 11px;
+	font-weight: bold;
+	margin-left: 10px;
+	padding-top: 7px;
+	text-transform: uppercase;
+}
+
+.gig-section .image {
+	float: left;
+	margin-right: 20px;
+	width: 90px;
+}
+
+.gig-section .details {
+	float: left;
+	width: 250px;
+}
+
+.gig-section .details h2 a {
+	color: #caa504;
+	font-size: 18px;
+	padding-bottom: 5px;
+}
+
+.gig-section .details p {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.gig-section .location {
+	color: #a4a4a4;
+	float: right;
+	width: 148px;
+}
+
+.gig-section .location .area {
+	color: #fff;
+	font-size: 13px;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.pagination {
+	padding: 20px 0 0 165px;
+}
+
+.pagination .title {
+	font-size: 11px;
+	text-transform: uppercase;
+}
+
+.pagination li {
+	color: #777;
+	float: left;
+	padding-left: 15px;
+}
+
+.pagination li:first-child {
+	padding-left: 0;
+}
+
+.pagination li a {
+	color: #777;
+	padding: 3px;
+}
+
+.pagination li a:hover {
+	background: #777;
+	color: #fff;
+}
+
+.pagination .prev,
+.pagination .next {
+	height: 13px;
+	padding: 0;
+	width: 14px;
+}
+
+.pagination .prev,
+.pagination .prev:hover {
+	background: url(../images/btn-pagination-prev.png) no-repeat;
+}
+
+.pagination .next,
+.pagination .next:hover {
+	background: url(../images/btn-pagination-next.png) no-repeat;
+}
+
+
+/* 7.6 Artist
+------------------------------------------------------------------------------*/
+
+.sorting {
+	background: url(../images/bg-filter.png) repeat-x;
+	border-left: 1px solid #323232;
+	color: #777;
+	font-size: 12px;
+	height: 30px;
+	margin-bottom: 20px;
+}
+
+.sorting-bottom {
+	margin-bottom: 0;
+}
+
+.sorting div {
+	float: left;
+}
+
+.sorting .view-option {
+	border-right: 1px solid #151616;
+	margin-top: 2px;
+	height: 28px;
+	line-height: 28px;
+	padding: 0 20px 0 13px;
+}
+
+.sorting .view-option a {
+	color: #777;
+}
+
+.sorting .filter {
+	float: right;
+}
+
+.filter form {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 20px 0 0;
+}
+
+.filter form label {
+	float: left;
+	padding: 0 10px 0 0;
+}
+
+.filter .custom-select {
+	margin-top: 6px;
+}
+
+.filter .paging {
+	border-left: 1px solid #151616;
+	float: left;
+	height: 28px;
+	line-height: 28px;
+	margin-top: 2px;
+	padding: 0 5px;
+}
+
+.filter .paging span {
+	display: block;
+	float: left;
+	line-height: 26px;
+}
+
+.filter .paging .prev,
+.filter .paging .next {
+	float: left;
+	height: 13px;
+	margin: 7px 10px 0;
+	width: 14px;
+}
+
+.filter .prev,
+.filter .prev:hover {
+	background: url(../images/btn-pagination-prev.png) no-repeat;
+}
+
+.filter .next,
+.filter .next:hover {
+	background: url(../images/btn-pagination-next.png) no-repeat;
+}
+
+.artist-list > ul {
+	padding-bottom: 20px;
+}
+
+.artist-list ul li {
+	float: left;
+	margin-left: 32px;
+	width: 120px;
+}
+
+.artist-list ul li:first-child {
+	margin-left: 0;
+}
+
+.artist-list .image {
+	position: relative;
+	text-align: center;
+}
+
+.artist-list .image a:hover span {
+	background: url(../images/bg-noteworthy-hover.png) no-repeat;
+	display: block;
+	height: 90px;
+	left: 15px;
+	position: absolute;
+	top: 0;
+	width: 90px;
+	z-index: 10;
+}
+
+.artist-list .image img {
+	z-index: 1;
+}
+
+.artist-list .details {
+	text-align: center;
+}
+
+.artist-list .details p {
+	padding-bottom: 5px;
+}
+
+.artist-list .option {
+	padding-left: 42px;
+}
+
+.artist-list .option li {
+	margin: 0 5px 0 0;
+	width: auto;
+}
+
+
+/* 7.7 Upload 
+------------------------------------------------------------------------------*/
+
+.upload-section .section-left {
+	width: 368px;
+}
+
+.upload-section .section-right {
+	padding-top: 49px;
+	width: 343px;
+}
+
+.upload-section h2 {
+	font-size: 18px;
+}
+
+.upload-section li {
+	padding-bottom: 20px;
+}
+
+.upload-section li div {
+	float: left;
+	margin-left: 10px;
+}
+
+.upload-section li div:first-child {
+	margin-left: 0;
+}
+
+.upload-section label {
+	display: block;
+	padding-bottom: 5px;
+}
+
+.upload-section input[type="text"] {
+	height: 26px; 
+	line-height: 26px;
+	width: 357px;
+}
+
+.upload-section .custom-select {
+	background: #fff;
+	border: none;
+	color: #000;
+	font-size: 12px;
+	margin: 0;
+	width: 179px; 
+}
+
+.upload-section .custom-select a.current-selected { 
+	color: #000; 
+	height: 26px; 
+	line-height: 26px; 
+}
+
+.upload-section .custom-select.open .custom-select-wrapper { 
+	background: #fff; 
+	top: 26px;
+	width: 179px;
+} 
+
+.upload-section .custom-select ul li {
+	border-bottom: 1px solid #666;
+}
+
+.upload-section .custom-select ul li a { 
+	color: #000; 
+}
+
+.upload-section .image {
+	float: left;
+	margin-right: 10px;
+}
+
+.upload-section .image img {
+	margin-bottom: 5px;
+}
+
+.upload-section .image .btn {
+	background: url(../images/btn-upload.png) no-repeat;
+	height: 15px;
+	width: 75px;
+}
+
+.upload-section .description {
+	float: left;
+	margin: 0;
+}
+
+.upload-section .description textarea {
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border-radius: 5px; 
+	background: #fff; 
+	border: none;
+	height: 100px;
+	resize: none;
+	width: 258px;
+}
+
+.upload-section .button .form-btn {
+	background: url(../images/btn-save.png) no-repeat;
+	float: left;
+	margin-right: 23px;
+	height: 26px;
+	width: 73px;
+}
+
+.upload-section .button .cancel {
+	color: #fff;
+	float: left;
+	font-size: 11px;
+	padding-top: 6px;
+	text-transform: uppercase;
+}
+
+.upload-info .box {
+	background: url(../images/bg-artist-info-box.png);
+	border-top: 1px solid rgba(255,255,255,0.2);
+	border-left: 1px solid rgba(255,255,255,0.2);
+	padding: 17px 15px 20px;
+}
+
+.upload-info h2 {
+	color: #e4a400;
+	font-size: 14px;
+	padding-bottom: 5px;
+}
+
+.upload-info p {
+	line-height: 24px;
+}
+
+
+/* 7.8 Register
+------------------------------------------------------------------------------*/
+
+.register-section h2 {
+	font-size: 18px;
+	text-transform: uppercase;
+	padding-bottom: 10px;
+}
+
+.register-section div {
+	float: left;
+}
+
+.register-section .personal {
+	margin-right: 20px;
+	width: 416px;
+}
+
+.register-section .box {
+	background: rgba(0,0,0,0.5);
+	padding: 20px 10px;
+	width: 730px;
+}
+
+.register-section li {
+	padding-bottom: 10px;
+}
+
+.register-section .personal label {
+	display: block;
+	float: left;
+	margin-right: 10px;
+	padding-top: 6px;
+	text-align: right;
+	width: 110px;
+}
+
+.register-section .button {
+	padding-left: 120px;
+}
+
+.register-section .form-btn {
+	background: url(../images/btn-submit.png) no-repeat;
+	height: 26px;
+	width: 73px;
+}
+
+.register-section .social-network {
+	width: 294px;
+}
+
+.register-section .social-network label {
+	display: block;
+	float: left;
+	margin-right: 10px;
+	text-indent: -999em;
+	width: 24px;
+}
+
+.register-section .social-network .myspace {
+	background: url(../images/ico-register-myspace.png) no-repeat;	
+}
+
+.register-section .social-network .facebook {
+	background: url(../images/ico-register-facebook.png) no-repeat;	
+}
+
+.register-section .social-network .twitter {
+	background: url(../images/ico-register-twitter.png) no-repeat;	
+}
+
+.register-section .social-network input[type="text"] {
+	width: 220px;
+}
+
+
+/* 7.9 Mylocalized
+------------------------------------------------------------------------------*/
+
+.mylocalized-section .section-right {
+	padding-™top: 50px;
+}
+
+.mylocalized-menu nav {
+	background: #000;
+	border-top: 1px solid #5c5c5c;
+	border-left: 1px solid #2d2d2d;
+	padding: 5px 20px;
+}
+
+.mylocalized-menu nav li {
+	background: url(../images/border-mylocalized-nav.png) no-repeat;
+	float: left;
+	padding: 0 27px;
+}
+
+.mylocalized-menu nav li:first-child {
+	background: none;
+	padding-left: 0;
+}
+
+.mylocalized-menu nav a {
+	color: #fff;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.mylocalized-menu nav a:hover,
+.mylocalized-menu nav .active a {
+	color: #e3d229;
+}
+
+.mylocalized-menu header {
+	background: #000;
+	border-top: 1px solid #5c5c5c;
+	border-left: 1px solid #2d2d2d;
+	padding: 5px 19px;	
+}
+
+.my-playlist-list ul {
+	background: rgba(0,0,0,0.5);
+	padding: 20px 0 20px 20px;	
+}
+
+.my-playlist-list li {
+	border-top: 1px dotted #fff;
+	padding: 15px 0 10px;
+}
+
+.my-playlist-list li:first-child {
+	border-top: none;
+	padding-top: 0;
+}
+
+.my-playlist-list div {
+	float: left;
+	margin-right: 10px;
+}
+
+.my-playlist-list h2 {
+	font-family: Arial;
+	font-size: 12px;
+	padding-bottom: 5px;
+	text-transform: none;
+}
+
+.my-playlist-list h2 span {
+	color: #cd960a;
+}
+
+.my-playlist-list .check {
+	width: 12px;
+}
+
+.my-playlist-list .details {
+	width: 238px;
+}
+
+.my-playlist-list .details p {
+	padding-bottom: 5px;
+}
+
+.my-playlist-list .option {
+	float: right;
+	width: 50px;
+}
+
+.my-playlist-list .option ul {
+	padding: 0;
+}
+
+.my-playlist-list .option li {
+	border: none;
+	float: left;
+	margin-right: 10px;
+	padding: 0;
+}
+
+.playlist-info header {
+	padding-bottom: 10px;
+}
+
+.playlist-info header span {
+	display: block;
+	float: left;
+	padding-top: 4px;
+}
+
+.playlist-info header a {
+	background: url(../images/btn-add-playlist.png) no-repeat;
+	float: right;
+	height: 21px;
+	width: 149px;
+}
+
+.playlist-info .box {
+	background: url(../images/bg-artist-info-box.png);
+	border-top: 1px solid rgba(255,255,255,0.2);
+	border-left: 1px solid rgba(255,255,255,0.2);
+	padding: 17px 15px 20px;
+}
+
+.playlist-info .box h2 {
+	color: #cd960a;
+	font-size: 18px;
+	font-weight: normal;
+	text-transform: none;
+}
+
+.playlist-info .box li {
+	padding-bottom: 5px;
+}
+
+.playlist-info .box a {
+	color: #8c8c8c;
+}
+
+/* album-list */
+.my-album-list {
+	margin-top: 20px;
+}
+
+.my-album-list h2 {
+	font-size: 18px;
+	padding-bottom: 0;
+}
+
+.my-album-list header {
+	padding-bottom: 20px;
+}
+
+.my-album-list header p {
+	color: #e4a400;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.my-album-list header span {
+	color: #fff;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.my-album-list ul {
+	padding-bottom: 10px;
+}
+
+.my-album-list li {
+	float: left;
+	margin-left: 30px;
+	width: 210px;
+}
+
+.my-album-list li:first-child {
+	margin-left: 0;
+}
+
+.my-album-list .image {
+	float: left;
+	margin-right: 10px;
+	position: relative;
+	width: 90px;
+}
+
+.my-album-list .image a:hover span {
+	background: url(../images/bg-noteworthy-hover.png) no-repeat;
+	display: block;
+	height: 90px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 90px;
+	z-index: 10;
+}
+
+.my-album-list .image img {
+	z-index: 1;
+}
+
+.my-album-list .details {
+	float: left;
+	width: 90px;
+}
+
+.my-album-list .details .option {
+	margin-bottom: 5px;
+}
+
+.my-album-list .details .option li {
+	float: left;
+	margin: 0 10px 0 0;
+	width: auto;
+}
+
+.my-album-list .details h3 {
+	padding-bottom: 5px;
+}
+
+.my-album-list .details h3 a {
+	color: #fff;	
+}
+
+.my-album-list .details p {
+	color: #fff;
+	font-size: 11px;
+	padding-bottom: 5px;
+}
+
+/* my-artist-list */
+.my-artist-list {
+	margin-top: 20px;
+}
+
+.my-artist-list h2 {
+	font-size: 18px;
+}
+
+.popular-song {
+	margin-bottom: 20px;
+}
+
+.my-artist-list header {
+	background: rgba(0,0,0,0.5);
+	margin-bottom: 10px;
+	padding: 3px 0 3px 10px;
+}
+
+.my-artist-list header h3 {
+	color: #e4a400;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+.popular-song ol li {
+	border-bottom: 1px dotted #fff;
+	list-style: inside decimal;
+	margin-bottom: 10px;
+	padding: 0 0 10px 10px;
+	position: relative;
+	width: auto;
+}
+
+.popular-song li:first-child {
+	padding-top: 0;
+}
+
+.popular-song ol li p {
+	display: inline;
+}
+
+.popular-song ol li a {
+	color: #fff;
+}
+
+.popular-song .option {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.popular-song .option li {
+	border-bottom: none;
+	float: left;
+	list-style: none;
+	margin: 0 5px 0 0;
+	padding: 0;
+}
+
+.my-artist-list .view-all {
+	text-align: right;
+}
+
+.my-artist-list .view-all a {
+	text-decoration: underline;
+}
+
+.popular-album ul {
+	padding-bottom: 10px;
+}
+
+.popular-album li {
+	float: left;
+	margin-left: 30px;
+	width: 210px;
+}
+
+.popular-album li:first-child {
+	margin-left: 0;
+}
+
+.popular-album .image {
+	float: left;
+	margin-right: 10px;
+	position: relative;
+	width: 90px;
+}
+
+.popular-album .image a:hover span {
+	background: url(../images/bg-noteworthy-hover.png) no-repeat;
+	display: block;
+	height: 90px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 90px;
+	z-index: 10;
+}
+
+.popular-album .image img {
+	z-index: 1;
+}
+
+.popular-album .details {
+	float: left;
+	width: 90px;
+}
+
+.popular-album .details a {
+	color: #fff;
+}
+
+.popular-album .details .option {
+	margin-bottom: 5px;
+}
+
+.popular-album .details .option li {
+	float: left;
+	margin: 0 10px 0 0;
+	width: auto;
+}
+
+.popular-album .details h3 {
+	color: #fff;	
+	padding-bottom: 5px;
+}
+
+.popular-album .details p {
+	color: #fff;
+	font-size: 11px;
+	padding-bottom: 5px;
+}
+
+/* my-music-list */
+.my-music-list header {
+	background: none;
+	margin-top: 20px;
+	padding: 0;
+}
+
+.my-music-list header h2 {
+	float: left;
+	font-size: 18px;
+}
+
+.my-music-list header form {
+	float: right;
+}
+
+.my-music-list header .custom-select {
+	background: #404f5a;
+}
+
+.my-music-list header .custom-select a.current-selected {
+	height: 19px;	
+}
+
+.my-music-list header .custom-select.open .custom-select-wrapper { 
+	background: #404f5a;	
+}
+
+.custom-select ul li a { 
+	padding: 5px 10px;
+}
+
+.my-music-list .track li {
+	border-top: 1px dashed #fff;
+	padding: 10px 0;
+}
+
+.my-music-list li:first-child {
+	border-top: none;
+}
+
+.my-music-list .track .details {
+	float: left;
+	width: 150px;
+}
+
+.my-music-list .track .details h3 {
+	padding-bottom: 5px;
+}
+
+.my-music-list .track .details .album {
+	color: #00bff3;
+}
+
+.my-music-list .track .option {
+	float: left;
+	width: 100px;
+}
+
+.my-music-list .track .option li {
+	border: none;
+	float: left;
+	margin-right: 5px;
+	padding: 0;
+}
+
+.my-music-list .track .shared,
+.my-music-list .track .listener {
+	float: left;
+	font-weight: bold;
+	width: 100px;
+}
+
+
+/* 7.10 Signup as
+------------------------------------------------------------------------------*/
+
+.signup-as .image {
+	float: left;
+	margin-right: 20px;
+	width: 50px;
+}
+
+.signup-as .details {
+	float: left;
+}
+
+.signup-as .details h3 {
+	color: #cd960a;
+	font-size: 18px;
+	padding: 10px 0;
+}
+
+.signup-as .details h3:first-child {
+	font-size: 12px;
+	padding-top: 0;
+	padding-bottom: 10px;
+	text-transform: uppercase;
+}
+
+.signup-as .details p {
+	padding-bottom: 10px;
+}
+
+.signup-as .details .label {
+	display: block;
+	font-weight: bold;
+	padding-bottom: 3px;
+	width: 200px;
+}
+
+.signup-as .register-as-form {
+	float: left;
+	margin-right: 10px;	
+}
+
+.signup-as .register-as-form .btn-1 {
+	background: url(../images/btn-register-1.png) no-repeat;
+	height: 26px;
+	width: 148px;
+}
+
+.signup-as .register-as-form .btn-2 {
+	background: url(../images/btn-register-2.png) no-repeat;
+	height: 26px;
+	width: 159px;
+}
+
+
+/* 8 Sidebar
+------------------------------------------------------------------------------*/
+
+.sidebar-left {
+	float: left;
+	margin-right: 15px;
+	width: 201px;
+}
+
+.copyright {
+	color: #414948;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+
+
+/* 9 Footer
+------------------------------------------------------------------------------*/
+
+footer[role="contentinfo"] {
+	padding: 45px 0 10px;
+}
+
+footer[role="contentinfo"] li {
+	border-left: 1px solid #9b6f03;
+	float: left;
+	padding: 10px;
+	width: 136px;
+}
+
+footer[role="contentinfo"] li:first-child {
+	border-left: none;
+}
+
+footer[role="contentinfo"] li a {
+	color: #9b6f03;
+	display: block;
+	font-family: 'ChampagneLimousinesRegular';
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+footer[role="contentinfo"] li a span {
+	color: #959595;
+	display: block;
+	font-family: 'EuromodeBold';
+	font-size: 11px;
+}
+
+
+/* 10 Print
+------------------------------------------------------------------------------*/
+
+@media print {
+
+	body { 
+		font: normal normal 12pt/1.5em "Times New Roman", Times, serif; 
+	}
+
+	a[href]:after { 
+		content: " (" attr(href) ") "; 
+		font-size: 90%; 
+	}
+
+	a[href^="/"]:after { 
+		content: " (http://domain.com" attr(href) ") "; 
+	}
+
+	.hide { 
+		display: none !important; 
+	}
+	
+}	
+
+
+
+
+
+
+
+
+
+
